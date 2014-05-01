@@ -1,7 +1,4 @@
-digitCapacity
-=============
-
-Digit capacity jQuery plugin
+<h2>Digit capacity jQuery plugin</h2>
 Simple jQuery plugin that allows to align data in table cells. It aligns text in the table cells based on characters. 
 The following example shows how to use plugin:
 <pre><code>$(#table-id tr td(nth-child(1)).digitCapacity('.')</code></pre>
