@@ -42,6 +42,26 @@ body{
 	margin:0 auto;
 	width:520px;
 }
+h2{
+	color: #444;
+	font-size: 22px;
+	text-align: center;
+}
+p{
+	margin-left: 60px;
+	color: #666;
+	font-size: 15px;
+}
+code{
+	padding: 10px;
+	background: #f5f5f5;
+	text-align: center;
+	display: block;
+	border-radius: 3px;
+	border: 1px solid #DDD;
+	margin-top: 10px;
+	color: #666;
+}
 a:link {
 	color: #666;
 	font-weight: bold;
@@ -80,10 +100,10 @@ table a:hover {
 table {
 	font-family:Arial, Helvetica, sans-serif;
 	color:#666;
-	font-size:12px;
+	font-size:14px;
 	text-shadow: 1px 1px 0px #fff;
 	background:#eaebec;
-	margin:20px;
+	margin:10px auto 40px;
 	border:#ccc 1px solid;
 
 	-moz-border-radius:3px;
@@ -118,8 +138,8 @@ table tr:first-child th:last-child{
 	border-top-right-radius:3px;
 }
 table tr{
-	text-align: center;
-	padding-left:20px;
+	text-align: left;
+	padding-left:30px;
 }
 table tr td:first-child{
 	text-align: left;
@@ -127,10 +147,10 @@ table tr td:first-child{
 	border-left: 0;
 }
 table tr td {
-	padding:18px;
+	padding:18px 18px 18px 25px;
 	border-top: 1px solid #ffffff;
 	border-bottom:1px solid #e0e0e0;
-	border-left: 1px solid #e0e0e0;
+	border-left: 0;
 	
 	background: #fafafa;
 	background: -webkit-gradient(linear, left top, left bottom, from(#fbfbfb), to(#fafafa));
@@ -143,6 +163,7 @@ table tr.even td{
 }
 table tr:last-child td{
 	border-bottom:0;
+	font-weight: bold;
 }
 table tr:last-child td:first-child{
 	-moz-border-radius-bottomleft:3px;
@@ -165,18 +186,42 @@ table tr:hover td{
 </head>
 
 <body>
-
+<h2>Simple digit capacity jQuery plugin example</h2>
+<p>Table without using plugin</p>
 <table cellspacing='0'> <!-- cellspacing='0' is important, must stay -->
 	<tr><th>Browser name</th><th>July 2013</th><th>August 2013</th></tr><!-- Table Header -->
     
 <tr><td>Chrome</td><td>24,5%</td><td>23,9%</td></tr><!-- Table Row -->
-	<tr class='even'><td>Firefox</td><td>20,6%</td><td>17,4%</td></tr><!-- Darker Table Row -->
+	<tr class='even'><td>Firefox</td><td>20,62%</td><td>17,4%</td></tr><!-- Darker Table Row -->
 
-	<tr><td>Opera</td><td>17,1%</td><td>10,3%</td></tr>
-	<tr class='even'><td>Internet Explorer</td><td>9,5%</td><td>9,8%</td></tr>
+	<tr><td>Opera</td><td>17,11%</td><td>10,3%</td></tr>
+	<tr class='even'><td>Internet Explorer</td><td>9,5%</td><td>9,81%</td></tr>
 	
     <tr><td>Safari</td><td>8,2%</td><td>2,6%</td></tr>
-	<tr class='even'><td>Using plugin</td><td>BEFORE</td><td>AFTER</td></tr>
+	<tr class='even'><td>Others</td><td>19,5%</td><td>19,81%</td></tr>
 </table>
+<p>Now we use digit capacity plugin to make the second and third columns more readable</p>
+<code>
+	$("#after tr td:nth-child(2)").digitCapacity(',');<br/>
+	$("#after tr td:nth-child(3)").digitCapacity(',');
+</code>
+<table id="after" cellspacing='0'> <!-- cellspacing='0' is important, must stay -->
+	<tr><th>Browser name</th><th>July 2013</th><th>August 2013</th></tr><!-- Table Header -->
+    
+<tr><td>Chrome</td><td>24,5%</td><td>23,9%</td></tr><!-- Table Row -->
+	<tr class='even'><td>Firefox</td><td>20,62%</td><td>17,4%</td></tr><!-- Darker Table Row -->
+
+	<tr><td>Opera</td><td>17,11%</td><td>10,3%</td></tr>
+	<tr class='even'><td>Internet Explorer</td><td>9,5%</td><td>9,81%</td></tr>
+	
+    <tr><td>Safari</td><td>8,2%</td><td>2,6%</td></tr>
+	<tr class='even'><td>Others</td><td>19,5%</td><td>19,81%</td></tr>
+</table>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="jquery.digitCapacity.js"></script>
+<script>
+	$("#after tr td:nth-child(2)").digitCapacity(',');
+	$("#after tr td:nth-child(3)").digitCapacity(',');
+</script>
 </body>
 </html>
