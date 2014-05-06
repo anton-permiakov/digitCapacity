@@ -14,7 +14,7 @@
                     $(this).html('<span style="text-align: right; display: inline-block">' + numList[0] + '</span>');
                 }
                 if (numList[1] != undefined){
-                    $(this).html('<span style="text-align: right; display: inline-block">' + numList[0] + '</span><span style="text-align:left">.' + numList[1] + '</span>');
+                    $(this).html('<span style="text-align: right; display: inline-block">' + numList[0] + '</span><span style="text-align:left">'+ devider + numList[1] + '</span>');
                 }
                 if (spWidth < $(this).children('span:nth-child(1)').width()) {
                     spWidth = $(this).children('span:nth-child(1)').width();
